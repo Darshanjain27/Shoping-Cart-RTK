@@ -54,11 +54,11 @@ const Cart=()=>{
  
   <div className="cart-items">
 
-    {cart.cartItems.map((cartItem)=>(
+    {cart.cartItems.map((cartItem,index)=>(
    
       <>
       
-       <div className="cart-item d-flex"key={cartItem.id}>
+       <div className="cart-item d-flex" key={index}>
        <div className="cart-product d-flex ">
         <img src={cartItem.image}alt={cartItem.title} className=""style={{width:"95px"}}/>
        </div>
@@ -91,7 +91,9 @@ const Cart=()=>{
         <span className="amount">${cart.cartTotalAmount}</span>
       </div>
       <p>Taxes and shipping calculated at checkout</p>
-      <button>Check out</button>
+     <Link to='/checkout'>
+     <button>Check out</button>
+     </Link>
       <div className="continue-shopping">
       <Link to='/'>
               <FaLongArrowAltLeft/>
