@@ -6,6 +6,7 @@ import Cart from './component/cart'
 import './App.css';
 import Home from './component/home'
 import Navbar from './component/navbar'
+import Checkout from './component/checkout';
 function App() {
   return (
   <>
@@ -14,10 +15,11 @@ function App() {
   <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
       </BrowserRouter>
-  </>
+  </> 
   );
 }
 
