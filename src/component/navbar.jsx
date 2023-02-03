@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <>
       {/* <!-- Navbar --> */}
-      <nav className="navbar navbar-expand-lg navbar-light position-fixed w-100 bg-light shadow p-3">
+      <nav className="navbar navbar-expand-lg navbar-light  w-100 bg-light shadow p-2">
         {/* <!-- Container wrapper --> */}
         <div className="container-fluid">
           {/* <!-- Toggle button --> */}
