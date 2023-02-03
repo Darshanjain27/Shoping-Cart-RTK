@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const [fetchdata, setFetchData] = useState([]);
   const [count, setCount] = useState(1);
+  const[search,setSeach]=useState("")
   const [showperpage, setShowPerPage] = useState(3);
   const [paginations, setPaginations] = useState({
     start: 0,
@@ -62,12 +63,21 @@ const Home = () => {
     <>
       <div className="container ">
         <div className="row ">
-          {fetchdata
+         <div className="d-flex justify-content-center">
+         <input type="text"placeholder="Search Products ....." className="w-25 mt-4"onChange={(e)=>{setSeach(e.target.value)}}/>
+         </div>
+          {fetchdata.filter((items)=>{
+            if(search==""){
+              return items;
+            }else if( items.title.toLowerCase().includes(search.toLowerCase())){
+              return items;
+            }
+          })
             .slice(paginations.start, paginations.end)
             .map((items, id) => {
               return (
                 <>
-                  <div className="shadow p-5 col-lg-4 " key={id}>
+                  <div className="shadow p-5 mt-5 col-lg-4  " key={id}>
                     <h4>{items.id}</h4>
                     <h4>
                       <img
